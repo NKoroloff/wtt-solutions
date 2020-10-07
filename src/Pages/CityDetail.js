@@ -23,7 +23,6 @@ export const CityDetail = () => {
             <header className="header">
                 <button onClick={goBackHandler}>BACK</button>
             </header>
-            <City city={myCity}/>
             <CityDetailWeathers/>
         </>
     )
