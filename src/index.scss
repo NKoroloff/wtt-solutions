@@ -1,0 +1,14 @@
+$main-color:#345231;
+$body-color:#f8f8f8;
+.header{
+  background:$main-color;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+body{
+  margin: 0;
+  background: $body-color;
+}
