@@ -8,7 +8,7 @@ export const CityDetailWeathers = () => {
     const {city} = useParams();
     const myCity =  cities.find(c => c.city.name === city)
 
-    return myCity.list.map(i => {
-        return (<CityDetailWeather city={i}/>)
+    return myCity.list.map((city, index) => {
+        return (<CityDetailWeather city={city} key={index}/>)
     })
 }

@@ -1,13 +1,20 @@
 .city-container{
   display: flex;
-  flex-direction: column;
-  max-width:75%;
-  margin: 4rem auto 0;
+  flex-direction: column-reverse;
+  max-width:100%;
+  a{
+    color:black;
+    text-decoration: none;
+  }
+}
+.city-detail.city-container{
+  .city{
+    max-width: 100%;
+  }
 }
 .city{
   display: flex;
   flex-wrap:wrap;
-  justify-content: space-between;
   background-color: aliceblue;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -15,8 +22,43 @@
   -webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.15);
   -moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.15);
   box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.15);
+  align-items: center;
+  transition:.5s all ;
+  border:1px solid aliceblue;
+  max-width: 50%;
+  &:hover{
+    box-shadow:none;
+    border:1px solid rgba(0,0,0,0.15);
+  }
   &__name{
     font-weight: bold;
     font-size: 2em;
   }
+  &__temperature{
+    font-size: 20px;
+  }
+  &__date{
+    margin-left:auto;
+  }
+  &__group{
+    margin-right:2rem;
+  }
+  &__icon{
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+  }
+}
+.city-enter{
+  opacity:0;
+
+}
+.city-enter-active{
+  opacity:1;
+  transition: opacity 800ms ease-in-out;
+}
+.city-exit-active{
+  opacity:0
 }

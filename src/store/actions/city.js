@@ -17,7 +17,7 @@ export function fetchCities(value) {
                     dispatch({type: ERROR_SEARCH, error: true})
                     dispatch({type: LOADING_HIDE, loading: false })
                 }
-            }, 1000)
+            }, 600)
     }
 }
 

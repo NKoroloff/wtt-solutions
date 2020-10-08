@@ -3,17 +3,23 @@ import {City} from './City'
 import {useSelector} from "react-redux";
 
 export const Cities = () => {
-    const cities = useSelector(state =>  state.cities.fetchedCities)
+    const uniqueCities = new Set();
+    let cities = useSelector(state =>  state.cities.fetchedCities);
 
+    const filteredArr = cities.filter(el => {
+        const duplicate = uniqueCities.has(el.city.id);
+        uniqueCities.add(el.city.id);
+        return !duplicate;
+    });
+    let showLastFiveCities = filteredArr.slice(0).slice(-5);
     if(!cities.length){
-        return <p>No cities to show</p>
+        return <p className="city">No cities to show</p>
     }
-
-
-    return cities.slice(Math.max(cities.length - 5, 0))
-        .map(city => {
+    return showLastFiveCities
+        .map((city, index) => {
             return (
-                <City key={city.city.id} city={city} />
+                <City key={index} city={city} />
         )
     })
+
 }

@@ -2,18 +2,34 @@
   display: inline-block;
   width: 80px;
   height: 80px;
+  position: absolute;
+  left: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  top: 50%;
+  z-index: 999999;
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.3);
 }
 .lds-dual-ring:after {
   content: " ";
   display: block;
   width: 64px;
   height: 64px;
-  margin: 8px;
   border-radius: 50%;
   border: 6px solid #345231;
   border-color: #345231 transparent #345231 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);

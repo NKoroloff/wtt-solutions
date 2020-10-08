@@ -13,10 +13,12 @@ export const Home = () => {
             <header className="header">
                 <InputSearch />
             </header>
-            <div className="city-container">
-                {loading ? <Loader /> : null}
+            <div className="container">
                 {error && !loading ? <div className="error">Something went wrong. Try another city </div> : null}
-                <Cities/>
+                <div className="city-container">
+                    {loading ? <Loader /> : null}
+                    <Cities/>
+                </div>
             </div>
         </>
     )
